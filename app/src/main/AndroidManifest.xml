@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rindou.activitytest">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".FirstActivity"
+            android:label="This is the first Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="This is the second Activity" />
+        <activity
+            android:name=".ThirdActivity"
+            android:label="This is the thrid Activity">
+            <intent-filter>
+                <action android:name="com.example.rindou.activitytest.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FourthActivity"
+            android:label="This is the fourth Activity">
+            <intent-filter>
+                <action android:name="com.example.rindou.activitytest.fourthactivity.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.rindou.activitytest.FourthActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FifthActivity"
+            android:label="This is Fifth Activity." />
+        <activity android:name=".SixthActivity"></activity>
+    </application>
+
+</manifest>
