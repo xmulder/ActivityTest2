@@ -44,14 +44,29 @@
             android:name=".FifthActivity"
             android:label="This is Fifth Activity." />
         <activity android:name=".SixthActivity" />
-        <activity android:name=".SixthIIAcitivity"
+        <activity
+            android:name=".SixthIIAcitivity"
             android:label="This is SixthIIActivity">
             <intent-filter>
-                <action android:name="com.example.rindou.activitytest.sixthiiactivity.ACTION_START"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.activitytest.SixthiiActivity"/>
+                <action android:name="com.example.rindou.activitytest.sixthiiactivity.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.activitytest.SixthiiActivity" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ItemActivity_1"
+            android:label="@string/title_activity_item_1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ItemActivity_2">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.IMPLICIT_INTENT_ITEM" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ItemActivity_3"></activity>
     </application>
 
 </manifest>

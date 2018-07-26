@@ -118,6 +118,23 @@ public class FirstActivity extends AppCompatActivity {
             case R.id.remove_item:
                 Toast.makeText(FirstActivity.this,"You clicked Remove Item.",Toast.LENGTH_LONG).show();
                 break;
+            case R.id.intent_item:
+                Toast.makeText(FirstActivity.this,"Item Intent test.",Toast.LENGTH_LONG).show();
+                Intent intentItem_1=new Intent(FirstActivity.this,ItemActivity_1.class);
+                startActivity(intentItem_1);
+                break;
+            case R.id.implicit_intent_item:
+                Toast.makeText(FirstActivity.this,"Implicit Intent for Item.",Toast.LENGTH_LONG).show();
+                Intent implicit_intent_item=new Intent("android.intent.action.ACTION_START");
+                implicit_intent_item.addCategory("android.intent.category.IMPLICIT_INTENT_ITEM");
+                startActivity(implicit_intent_item);
+                break;
+            case R.id.intent_data_item:
+                String item_data="Test Item Intent with data.";
+                Intent item_data_intent=new Intent(FirstActivity.this,ItemActivity_3.class);
+                item_data_intent.putExtra("itemdata",item_data);
+                startActivity(item_data_intent);
+                break;
             case R.id.exit_item:
                 Toast.makeText(FirstActivity.this,"Now you clicked Exit item and exit app.",Toast.LENGTH_LONG).show();
                 finish();
