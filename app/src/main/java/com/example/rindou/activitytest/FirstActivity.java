@@ -113,27 +113,51 @@ public class FirstActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.add_item:
-                Toast.makeText(FirstActivity.this,"You clicked Add Item.",Toast.LENGTH_LONG).show();
+                Toast toastAdd=Toast.makeText(FirstActivity.this,"You clicked Add Item.",Toast.LENGTH_LONG);
+                View viewToastAdd=toastAdd.getView();
+                viewToastAdd.setBackgroundResource(android.R.color.holo_orange_dark);
+                toastAdd.setView(viewToastAdd);
+                toastAdd.show();
                 break;
             case R.id.remove_item:
-                Toast.makeText(FirstActivity.this,"You clicked Remove Item.",Toast.LENGTH_LONG).show();
+                Toast toastRemove=Toast.makeText(FirstActivity.this,"You clicked Remove Item.",Toast.LENGTH_LONG);
+                View viewToastRemove=toastRemove.getView();
+                viewToastRemove.setBackgroundResource(android.R.color.holo_blue_bright);
+                toastRemove.setView(viewToastRemove);
+                toastRemove.show();
                 break;
+
+            //item的点击显式Intent
             case R.id.intent_item:
-                Toast.makeText(FirstActivity.this,"Item Intent test.",Toast.LENGTH_LONG).show();
+                Toast toastIntentItem=Toast.makeText(FirstActivity.this,"Item Intent test.",Toast.LENGTH_LONG);
+                View viewIntentToast=toastIntentItem.getView();
+                viewIntentToast.setBackgroundResource(android.R.color.holo_purple);
+                toastIntentItem.setView(viewIntentToast);
+                toastIntentItem.show();
                 Intent intentItem_1=new Intent(FirstActivity.this,ItemActivity_1.class);
                 startActivity(intentItem_1);
                 break;
+            //item的隐式Intent
             case R.id.implicit_intent_item:
                 Toast.makeText(FirstActivity.this,"Implicit Intent for Item.",Toast.LENGTH_LONG).show();
                 Intent implicit_intent_item=new Intent("android.intent.action.ACTION_START");
                 implicit_intent_item.addCategory("android.intent.category.IMPLICIT_INTENT_ITEM");
                 startActivity(implicit_intent_item);
                 break;
+            //item的显式携带数据的Intent
             case R.id.intent_data_item:
                 String item_data="Test Item Intent with data.";
                 Intent item_data_intent=new Intent(FirstActivity.this,ItemActivity_3.class);
                 item_data_intent.putExtra("itemdata",item_data);
                 startActivity(item_data_intent);
+                break;
+            //item的隐式携带数据的Intent
+            case R.id.implicit_intent_data_item:
+                String implicit_item_data="Implicit Intent with Data Item.";
+                Intent implicit_intent_data_item=new Intent("android.intent.action.ACTION_START");
+                implicit_intent_data_item.addCategory("android.intent.category.IMPLICIT_INTENT_ITEM_DATA");
+                implicit_intent_data_item.putExtra("implicitdataitem",implicit_item_data);
+                startActivity(implicit_intent_data_item);
                 break;
             case R.id.exit_item:
                 Toast.makeText(FirstActivity.this,"Now you clicked Exit item and exit app.",Toast.LENGTH_LONG).show();

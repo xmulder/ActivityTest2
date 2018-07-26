@@ -16,6 +16,9 @@
         android:id="@+id/intent_data_item"
         android:title="Intent DATA Item"/>
     <item
+        android:id="@+id/implicit_intent_data_item"
+        android:title="Implicit Intent DATA Item"/>
+    <item
         android:id="@+id/exit_item"
         android:title="Exit"/>
 
