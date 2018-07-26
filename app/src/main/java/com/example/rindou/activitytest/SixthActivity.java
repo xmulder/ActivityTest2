@@ -17,7 +17,7 @@ public class SixthActivity extends AppCompatActivity {
         BacktoFirstActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(SixthActivity.this,FirstActivity.class);
+                Intent intent=new Intent();
                 intent.putExtra("back_to_firstactivity","Back form SixthActivity to FirstActivity.");
                 setResult(RESULT_OK,intent);
                 finish();

@@ -43,7 +43,15 @@
         <activity
             android:name=".FifthActivity"
             android:label="This is Fifth Activity." />
-        <activity android:name=".SixthActivity"></activity>
+        <activity android:name=".SixthActivity" />
+        <activity android:name=".SixthIIAcitivity"
+            android:label="This is SixthIIActivity">
+            <intent-filter>
+                <action android:name="com.example.rindou.activitytest.sixthiiactivity.ACTION_START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.activitytest.SixthiiActivity"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

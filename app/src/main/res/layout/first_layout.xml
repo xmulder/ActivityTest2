@@ -37,5 +37,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_intent_for_back_with_data"
         android:text="Intent and back with data"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_implicit_intent_for_back_with_data"
+        android:text="Implicit Intent and back with data"/>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.rindou.activitytest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ public class FirstActivity extends AppCompatActivity {
         final Button buttonImplicitMoreIntent=(Button)findViewById(R.id.button_intent_Implicit_More_Category);
         Button buttonIntentData=(Button)findViewById(R.id.button_intent_data);
         Button buttonIntentandBackwithData=(Button)findViewById(R.id.button_intent_for_back_with_data);
+        Button buttonImplicitIntentforBackwithData=(Button)findViewById(R.id.button_implicit_intent_for_back_with_data);
 
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -72,9 +74,39 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(FirstActivity.this,SixthActivity.class);
+                Toast.makeText(FirstActivity.this,"Now From FirstActivity to SixthActivity.",Toast.LENGTH_LONG).show();
                 startActivityForResult(intent,1);
             }
         });
+
+        buttonImplicitIntentforBackwithData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sixthiiToast="This Button is Implicit Intent with Data from FirstActivity to SixthIIActivity.";
+                Toast.makeText(FirstActivity.this,sixthiiToast,Toast.LENGTH_LONG).show();
+                Intent implicitIntentwithData=new Intent("com.example.rindou.activitytest.sixthiiactivity.ACTION_START");
+                implicitIntentwithData.addCategory("android.intent.category.activitytest.SixthiiActivity");
+                startActivityForResult(implicitIntentwithData,2);
+            }
+        });
+
+    }
+
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        switch (requestCode){
+            case 1:
+                if(resultCode==RESULT_OK){
+                    String returnData=data.getStringExtra("back_to_firstactivity");
+                    Toast.makeText(FirstActivity.this,returnData,Toast.LENGTH_LONG).show();
+                    Log.d("First Activity",returnData);
+                }
+            case 2:
+                if(resultCode==RESULT_OK){
+                    String returnData2=data.getStringExtra("from_sixthii_to_first");
+                    Toast.makeText(FirstActivity.this,returnData2,Toast.LENGTH_LONG).show();
+                    Log.d("First Activity",returnData2);
+                }
+        }
     }
 
     @Override
